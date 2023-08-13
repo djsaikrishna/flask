@@ -2,6 +2,13 @@
 <html>
 <head>
     <title>Extract Links</title>
+    <script>
+        function copyToClipboard() {
+            var copyText = document.getElementById("extracted-links");
+            copyText.select();
+            document.execCommand("copy");
+        }
+    </script>
 </head>
 <body>
     <h1>Extract Links</h1>
@@ -12,10 +19,12 @@
     </form>
     
     <h2>Extracted Links:</h2>
-    <ul>
+    <textarea id="extracted-links" rows="5" cols="50">
         {% for link in links %}
-            <li><a href="{{ link }}">{{ link }}</a></li>
+            {{ link }}
         {% endfor %}
-    </ul>
+    </textarea>
+    
+    <button onclick="copyToClipboard()">Copy</button>
 </body>
 </html>

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Extract Links</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     <script>
@@ -10,7 +9,7 @@
             copyText.select();
             document.execCommand("copy");
         }
-    </script>
+  </script>
 </head>
 <body>
     <h1>Extract Links</h1>
@@ -21,11 +20,7 @@
     </form>
     
     <h2>Extracted Links:</h2>
-    <textarea id="extracted-links" rows="5" cols="50">
-        {% for link in links %}
-            {{ link }}
-        {% endfor %}
-    </textarea>
+    <p id="extracted-links">{{ links }}</p>
     
     <button onclick="copyToClipboard()">Copy</button>
 </body>

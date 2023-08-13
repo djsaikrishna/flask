@@ -3,6 +3,11 @@ body {
     background-color: #f7f7f7;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 h1, h2 {

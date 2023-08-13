@@ -19,13 +19,13 @@
         <button type="submit">Extract Links</button>
     </form>
     
-    <h2>Extracted Links:</h2>
-    <ul>
-        {% for link in links %}
-            <li>{{ link }}</li>
-        {% endfor %}
-    </ul>
-    
-    <button onclick="copyToClipboard()">Copy</button>
+   <h2>Extracted Links:</h2>
+<textarea id="extracted-links" rows="5" cols="50">
+    {% for link in links %}
+        {{ link }}
+    {% endfor %}
+</textarea>
+
+<button onclick="copyToClipboard()">Copy</button>
 </body>
 </html>

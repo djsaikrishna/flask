@@ -46,6 +46,16 @@ li {
     margin-bottom: 5px;
 }
 
+/* Adjust the size of the Extracted Links box */
+#extracted-links {
+    width: 100%;
+    height: 200px; /* Increase the height to make the box bigger */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    resize: vertical;
+}
+
 @media (max-width: 600px) {
     body {
         padding: 20px;

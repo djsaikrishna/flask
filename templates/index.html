@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Link Scraper</title>
+    <title>Extract Links</title>
 </head>
 <body>
-    <h1>Link Scraper</h1>
-    <form method="POST">
-        <label for="url">Enter the URL you want to scrape:</label>
-        <input type="text" name="url" id="url" required>
-        <button type="submit">Scrape Links</button>
+    <h1>Extract Links</h1>
+    <form action="/" method="post">
+        <label for="url">Enter URL:</label>
+        <input type="text" id="url" name="url">
+        <button type="submit">Extract Links</button>
     </form>
-    {% if links %}
-    <h2>Links Scraped:</h2>
+    
+    <h2>Extracted Links:</h2>
     <ul>
         {% for link in links %}
-        <li>{{ link }}</li>
+            <li><a href="{{ link }}">{{ link }}</a></li>
         {% endfor %}
     </ul>
-    <p>Links saved to {{ output_file }}</p>
-    {% endif %}
 </body>
 </html>

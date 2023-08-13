@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Link Scraper</title>
+</head>
+<body>
+    <h1>Link Scraper</h1>
+    <form method="POST">
+        <label for="url">Enter the URL you want to scrape:</label>
+        <input type="text" name="url" id="url" required>
+        <button type="submit">Scrape Links</button>
+    </form>
+    {% if links %}
+    <h2>Links Scraped:</h2>
+    <ul>
+        {% for link in links %}
+        <li>{{ link }}</li>
+        {% endfor %}
+    </ul>
+    <p>Links saved to {{ output_file }}</p>
+    {% endif %}
+</body>
+</html>

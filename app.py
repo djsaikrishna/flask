@@ -13,10 +13,9 @@ links = soup.find_all("a")
 
 with open(output_file, "w") as f:
     for link in links:
-        href = link.get("href")
-        if href:
-            # Get the plain text content of the link and remove leading/trailing spaces
-            text_content = link.get_text(strip=True)
+        # Get the visible text content within the link
+        text_content = ''.join(link.strings).strip()
+        if text_content:
             f.write(text_content + "\n")
 
 print("Text content saved to", output_file)

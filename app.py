@@ -1,21 +1,22 @@
+from flask import Flask, render_template, request
 import requests
 from bs4 import BeautifulSoup
 
-# Prompt the user to input the URL
-url = input("Enter the URL you want to scrape: ")
+app = Flask(__name__)
 
-# Get the filename for the output text file
-output_file = "output.txt"
+@app.route('/', methods=['GET', 'POST'])
+def scrape_links():
+    extracted_links = []
 
-response = requests.get(url)
-soup = BeautifulSoup(response.content, "html.parser")
-links = soup.find_all("a")
+    if request.method == 'POST':
+        url = request.form['url']
+        if url:
+            response = requests.get(url)
+            soup = BeautifulSoup(response.text, 'html.parser')
+            links = soup.find_all('a')
+            extracted_links = [link.get('href') for link in links if link.get('href')]
 
-with open(output_file, "w") as f:
-    for link in links:
-        # Get the visible text content within the link
-        text_content = ''.join(link.strings).strip()
-        if text_content:
-            f.write(text_content + "\n")
+    return render_template('index.html', links=extracted_links)
 
-print("Text content saved to", output_file)
+if __name__ == '__main__':
+    app.run()

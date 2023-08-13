@@ -20,7 +20,11 @@
     </form>
     
     <h2>Extracted Links:</h2>
-    <p id="extracted-links">{{ links }}</p>
+    <ul>
+        {% for link in links %}
+            <li>{{ link }}</li>
+        {% endfor %}
+    </ul>
     
     <button onclick="copyToClipboard()">Copy</button>
 </body>

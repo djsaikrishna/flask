@@ -1,0 +1,137 @@
+:root {
+  --main-bg-color: black;
+  --main-text-color: white;
+}
+
+.white-theme {
+  --main-bg-color: white;
+  --main-text-color: black;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.5s ease-in-out;
+}
+
+header {
+  padding: 15px;
+  background-color: #333;
+  color: var(--main-text-color);
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+}
+
+p {
+  overflow-wrap: break-word;
+}
+
+.container {
+  padding: 20px;
+  box-shadow: 0px 0px 10px grey;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 250px;
+}
+
+.symbol {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#navlogo {
+  height: 35px;
+  width: 150px;
+}
+
+#icon {
+  width: 30px;
+  cursor: pointer;
+  float: right;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* #player {
+  border: 2px solid #01b2ff;
+  padding: 5px;
+} */
+
+#dlButton {
+  margin-top: 5px;
+}
+
+#genButton {
+  margin-top: 5px;
+}
+
+#dropbtn {
+  margin-top: 5px;
+}
+
+#dropmenu {
+  width: 250px;
+}
+
+input[type="text"]::placeholder {
+  color: grey;
+}
+
+input[type="text"]:-ms-input-placeholder {
+  color: grey;
+}
+
+input[type="text"]::-ms-input-placeholder {
+  color: grey;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+footer {
+  padding: 15px;
+  text-align: center;
+  background-color: #333;
+  color: var(--main-text-color);
+  font-size: 14px;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  main {
+    padding: 10px;
+  }
+}
